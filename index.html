@@ -2,70 +2,84 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Yazı Yazma Uygulaması</title>
+  <title>Seni Seviyorum ❤️</title>
   <style>
     body {
+      background-color: #fff0f5;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
     }
-    h1 {
-      color: #333;
+
+    .heart {
+      font-size: 80px;
+      margin-bottom: 40px;
+      animation: pulse 1s infinite;
     }
-    textarea {
-      width: 90%;
-      max-width: 700px;
-      height: 300px;
-      padding: 15px;
-      font-size: 16px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      resize: vertical;
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
     }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
     button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 12px 24px;
+      font-size: 18px;
       border: none;
-      border-radius: 8px;
-      background-color: #4CAF50;
-      color: white;
+      border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
-    button:hover {
-      background-color: #45a049;
+
+    #yesBtn {
+      background-color: #ff69b4;
+      color: white;
     }
-    .saved-message {
-      margin-top: 10px;
-      color: green;
-      font-weight: bold;
+
+    #yesBtn:hover {
+      background-color: #ff1493;
+    }
+
+    #noBtn {
+      background-color: #d3d3d3;
+      color: #333;
+      position: absolute;
     }
   </style>
 </head>
 <body>
-  <h1>📝 Yazı Yazma Not Defteri</h1>
-  <textarea id="note" placeholder="Buraya yazını yaz..."></textarea>
-  <button onclick="saveNote()">Kaydet</button>
-  <p class="saved-message" id="msg"></p>
+
+  <div class="heart">❤️</div>
+
+  <div class="buttons">
+    <button id="yesBtn">Evet</button>
+    <button id="noBtn">Hayır</button>
+  </div>
 
   <script>
-    // Sayfa yüklenince önceki notu yükle
-    window.onload = function () {
-      const saved = localStorage.getItem("myNote");
-      if (saved) {
-        document.getElementById("note").value = saved;
-      }
-    };
+    const noBtn = document.getElementById("noBtn");
 
-    function saveNote() {
-      const content = document.getElementById("note").value;
-      localStorage.setItem("myNote", content);
-      document.getElementById("msg").textContent = "✅ Not kaydedildi!";
-      setTimeout(() => document.getElementById("msg").textContent = "", 2000);
-    }
+    noBtn.addEventListener("mouseenter", () => {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    document.getElementById("yesBtn").addEventListener("click", () => {
+      alert("Ben de seni seviyorum! 💖");
+    });
   </script>
+
 </body>
 </html>
