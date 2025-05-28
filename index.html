@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelime Avcısı</title>
+    <title>SÜPER MEGA KELIME AVCISI 3000 DELUXE SAHİN</title>
     <style>
         * {
             margin: 0;
@@ -12,519 +12,785 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: repeating-linear-gradient(
+                45deg,
+                #ff6b35,
+                #ff6b35 10px,
+                #f7931e 10px,
+                #f7931e 20px,
+                #ffd700 20px,
+                #ffd700 30px,
+                #32cd32 30px,
+                #32cd32 40px,
+                #1e90ff 40px,
+                #1e90ff 50px,
+                #8a2be2 50px,
+                #8a2be2 60px
+            );
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            animation: rainbowShift 3s infinite;
+            overflow-x: auto;
+        }
+
+        @keyframes rainbowShift {
+            0% { filter: hue-rotate(0deg) saturate(150%) brightness(120%); }
+            25% { filter: hue-rotate(90deg) saturate(200%) brightness(130%); }
+            50% { filter: hue-rotate(180deg) saturate(150%) brightness(110%); }
+            75% { filter: hue-rotate(270deg) saturate(200%) brightness(140%); }
+            100% { filter: hue-rotate(360deg) saturate(150%) brightness(120%); }
         }
 
         .game-container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
+            background: linear-gradient(45deg, #ff1744, #e91e63, #9c27b0, #673ab7, #3f51b5, #2196f3, #03a9f4, #00bcd4);
+            border: 15px solid #000;
+            border-radius: 50px;
+            padding: 40px;
+            margin: 20px;
+            box-shadow: 
+                0 0 50px #ff0000,
+                inset 0 0 50px #00ff00,
+                0 0 100px #0000ff,
+                inset 0 0 100px #ffff00;
             text-align: center;
-            backdrop-filter: blur(10px);
+            animation: containerPulse 2s infinite, containerRotate 10s infinite linear;
+            transform-origin: center;
+        }
+
+        @keyframes containerPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.05) rotate(2deg); }
+        }
+
+        @keyframes containerRotate {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
         }
 
         h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            font-size: 4rem;
+            text-shadow: 
+                5px 5px 0 #000,
+                10px 10px 0 #ff0000,
+                15px 15px 0 #00ff00,
+                20px 20px 0 #0000ff;
+            margin-bottom: 20px;
+            animation: titleBounce 1s infinite, titleColor 2s infinite;
+            font-weight: 900;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        @keyframes titleBounce {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        @keyframes titleColor {
+            0% { color: #ff0000; }
+            16% { color: #ff8000; }
+            33% { color: #ffff00; }
+            50% { color: #00ff00; }
+            66% { color: #0080ff; }
+            83% { color: #8000ff; }
+            100% { color: #ff0000; }
         }
 
         .subtitle {
-            color: #666;
+            color: #ffff00;
+            font-size: 2rem;
             margin-bottom: 30px;
-            font-size: 1.1rem;
+            text-shadow: 3px 3px 0 #000, 6px 6px 0 #ff0000;
+            animation: subtitleShake 0.5s infinite;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .stats {
+        @keyframes subtitleShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px) rotate(-1deg); }
+            75% { transform: translateX(5px) rotate(1deg); }
+        }
+
+        .mega-stats {
             display: flex;
             justify-content: space-around;
             margin-bottom: 30px;
-            background: rgba(102, 126, 234, 0.1);
-            padding: 15px;
-            border-radius: 15px;
+            background: repeating-linear-gradient(90deg, #ff0000, #ff0000 20px, #00ff00 20px, #00ff00 40px, #0000ff 40px, #0000ff 60px);
+            padding: 20px;
+            border-radius: 25px;
+            border: 8px dashed #ffff00;
+            animation: statsPulse 1.5s infinite;
+        }
+
+        @keyframes statsPulse {
+            0%, 100% { transform: scale(1) skewX(0deg); }
+            50% { transform: scale(1.1) skewX(5deg); }
         }
 
         .stat {
             text-align: center;
+            background: radial-gradient(circle, #ffff00, #ff8000);
+            padding: 15px;
+            border-radius: 50%;
+            border: 5px solid #000;
+            animation: statSpin 3s infinite linear;
+            min-width: 120px;
+        }
+
+        @keyframes statSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .stat-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #667eea;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ff0000;
             display: block;
+            text-shadow: 2px 2px 0 #000, 4px 4px 0 #fff;
+            animation: valueFlash 0.8s infinite;
+        }
+
+        @keyframes valueFlash {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
         }
 
         .stat-label {
-            color: #666;
-            font-size: 0.9rem;
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-shadow: 1px 1px 0 #fff;
+        }
+
+        .difficulty-selector {
+            margin: 20px 0;
+            padding: 15px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #ffd700);
+            border: 5px solid #000;
+            border-radius: 20px;
+        }
+
+        .difficulty-selector label {
+            color: #000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .difficulty-selector select {
+            font-size: 1.2rem;
+            padding: 10px;
+            border: 3px solid #000;
+            border-radius: 10px;
+            background: #ffff00;
+            font-weight: bold;
         }
 
         .letters-container {
             margin-bottom: 30px;
-            min-height: 100px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            padding: 20px;
-            background: rgba(102, 126, 234, 0.05);
-            border-radius: 15px;
-            border: 2px dashed #667eea;
+            min-height: 150px;
+            padding: 25px;
+            background: repeating-conic-gradient(from 0deg, #ff0000, #ff8000, #ffff00, #00ff00, #0080ff, #8000ff, #ff0000);
+            border: 10px solid #000;
+            border-radius: 30px;
+            animation: letterContainerSpin 5s infinite linear;
+            position: relative;
+        }
+
+        @keyframes letterContainerSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .letters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 15px;
+            justify-items: center;
+            transform: rotate(0deg);
+            animation: gridCounterSpin 5s infinite linear reverse;
+        }
+
+        @keyframes gridCounterSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .letter {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #ffff00, #ff8000, #ff0000);
+            border: 6px solid #000;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 2px 2px 0 #fff;
+            animation: letterBob 2s infinite ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .letter:nth-child(odd) {
+            animation-delay: -1s;
+        }
+
+        @keyframes letterBob {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            25% { transform: translateY(-10px) rotate(5deg) scale(1.1); }
+            50% { transform: translateY(0) rotate(0deg) scale(1.2); }
+            75% { transform: translateY(10px) rotate(-5deg) scale(1.1); }
+        }
+
+        .letter:hover {
+            transform: translateY(-15px) rotate(360deg) scale(1.5);
+            background: conic-gradient(from 0deg, #ff0000, #ff8000, #ffff00, #00ff00, #0080ff, #8000ff, #ff0000);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        .letter.used {
+            background: linear-gradient(45deg, #666, #333);
+            color: #999;
+            cursor: not-allowed;
+            animation: usedLetterSpin 1s infinite;
+        }
+
+        @keyframes usedLetterSpin {
+            0% { transform: rotate(0deg) scale(0.8); }
+            100% { transform: rotate(360deg) scale(0.8); }
+        }
+
+        .word-input {
+            width: 100%;
+            padding: 20px;
+            font-size: 2rem;
+            border: 8px solid #000;
+            border-radius: 25px;
+            margin-bottom: 25px;
+            text-align: center;
+            background: linear-gradient(45deg, #ffff00, #ff8000, #ff0000, #8000ff, #0080ff, #00ff00);
+            font-weight: 900;
+            color: #000;
+            text-shadow: 1px 1px 0 #fff;
+            animation: inputGlow 2s infinite;
+        }
+
+        @keyframes inputGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px #ff0000, inset 0 0 20px #00ff00;
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 40px #0000ff, inset 0 0 40px #ffff00;
+                transform: scale(1.02);
+            }
+        }
+
+        .word-input:focus {
+            outline: none;
+            animation: inputExplode 0.5s infinite;
+        }
+
+        @keyframes inputExplode {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.05) rotate(1deg); }
+            75% { transform: scale(1.05) rotate(-1deg); }
+        }
+
+        .mega-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .mega-button {
+            padding: 20px 30px;
+            font-size: 1.5rem;
+            border: 6px solid #000;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 900;
+            min-width: 180px;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #00ff00, #32cd32, #228b22);
+            color: #000;
+            animation: submitPulse 1s infinite;
+        }
+
+        @keyframes submitPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); box-shadow: 0 0 20px #00ff00; }
+            50% { transform: scale(1.1) rotate(2deg); box-shadow: 0 0 40px #32cd32; }
+        }
+
+        .clear-btn {
+            background: linear-gradient(45deg, #ff0000, #dc143c, #8b0000);
+            color: #fff;
+            animation: clearShake 2s infinite;
+        }
+
+        @keyframes clearShake {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            10% { transform: translateX(-5px) rotate(-1deg); }
+            20% { transform: translateX(5px) rotate(1deg); }
+            30% { transform: translateX(-3px) rotate(-0.5deg); }
+            40% { transform: translateX(3px) rotate(0.5deg); }
+            50% { transform: translateX(0) rotate(0deg); }
+        }
+
+        .new-game-btn {
+            background: conic-gradient(from 0deg, #ff0000, #ff8000, #ffff00, #00ff00, #0080ff, #8000ff, #ff0000);
+            color: #000;
+            animation: newGameSpin 3s infinite linear;
+        }
+
+        @keyframes newGameSpin {
+            0% { transform: rotate(0deg); filter: hue-rotate(0deg); }
+            100% { transform: rotate(360deg); filter: hue-rotate(360deg); }
+        }
+
+        .mega-button:hover {
+            transform: scale(1.2) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hint-btn {
+            background: linear-gradient(45deg, #ffd700, #ffb347, #daa520);
+            color: #000;
+            animation: hintGlow 1.5s infinite;
+        }
+
+        @keyframes hintGlow {
+            0%, 100% { box-shadow: 0 0 15px #ffd700; }
+            50% { box-shadow: 0 0 30px #ffb347; }
+        }
+
+        .shuffle-btn {
+            background: linear-gradient(45deg, #8a2be2, #9370db, #6a5acd);
+            color: #fff;
+            animation: shuffleSpin 4s infinite ease-in-out;
+        }
+
+        @keyframes shuffleSpin {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(90deg); }
+            50% { transform: rotate(180deg); }
+            75% { transform: rotate(270deg); }
+        }
+
+        .combo-display {
+            background: radial-gradient(circle, #ff1744, #e91e63);
+            color: #fff;
+            padding: 15px;
+            border-radius: 20px;
+            border: 5px solid #000;
+            margin: 15px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            animation: comboPulse 0.8s infinite;
+        }
+
+        @keyframes comboPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .found-words {
+            margin-top: 30px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e, #ffd700, #32cd32, #1e90ff, #8a2be2);
+            border: 8px solid #000;
+            border-radius: 25px;
+            padding: 25px;
+            animation: foundWordsFloat 3s infinite ease-in-out;
+        }
+
+        @keyframes foundWordsFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+
+        .found-words h3 {
+            color: #000;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0 #fff;
+            animation: headerWiggle 2s infinite;
+        }
+
+        @keyframes headerWiggle {
+            0%, 100% { transform: skewX(0deg); }
+            25% { transform: skewX(5deg); }
+            75% { transform: skewX(-5deg); }
+        }
+
+        .words-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .found-word {
+            background: linear-gradient(45deg, #32cd32, #228b22);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 4px solid #000;
+            text-shadow: 2px 2px 0 #000;
+            animation: wordAppear 0.8s ease, wordFloat 2s infinite ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .found-word::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: wordShine 3s infinite;
+        }
+
+        @keyframes wordShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @keyframes wordAppear {
+            from {
+                opacity: 0;
+                transform: scale(0) rotate(180deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes wordFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(2deg); }
+        }
+
+        .message {
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px 0;
+            font-weight: 900;
+            font-size: 1.5rem;
+            border: 6px solid #000;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+            animation: messageSlide 0.5s ease;
+        }
+
+        @keyframes messageSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-100px) rotate(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(0deg);
+            }
+        }
+
+        .success {
+            background: linear-gradient(45deg, #00ff00, #32cd32, #228b22);
+            color: #000;
+            animation: successExplode 2s infinite;
+        }
+
+        @keyframes successExplode {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.05) rotate(2deg); }
+            75% { transform: scale(1.05) rotate(-2deg); }
+        }
+
+        .error {
+            background: linear-gradient(45deg, #ff0000, #dc143c, #8b0000);
+            color: #fff;
+            animation: errorShake 0.5s infinite;
+        }
+
+        @keyframes errorShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px) rotate(-2deg); }
+            75% { transform: translateX(10px) rotate(2deg); }
+        }
+
+        .info {
+            background: linear-gradient(45deg, #1e90ff, #4169e1, #0000ff);
+            color: #fff;
+            animation: infoPulse 1.5s infinite;
+        }
+
+        @keyframes infoPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.02); opacity: 0.9; }
+        }
+
+        .power-ups {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .power-up {
             width: 60px;
             height: 60px;
-            background: linear-gradient(145deg, #ffffff, #f0f0f0);
-            border: 2px solid #ddd;
-            border-radius: 12px;
+            border-radius: 50%;
+            border: 4px solid #000;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
             font-weight: bold;
-            color: #333;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            user-select: none;
+            animation: powerUpFloat 2s infinite ease-in-out;
         }
 
-        .letter:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            background: linear-gradient(145deg, #667eea, #764ba2);
-            color: white;
+        .power-up:nth-child(odd) {
+            animation-delay: -1s;
         }
 
-        .letter.used {
-            background: #95a5a6;
+        @keyframes powerUpFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(180deg); }
+        }
+
+        .freeze-time {
+            background: linear-gradient(45deg, #00bcd4, #0097a7);
             color: #fff;
-            cursor: not-allowed;
-            transform: none;
         }
 
-        .word-input {
-            width: 100%;
+        .double-points {
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+            color: #000;
+        }
+
+        .extra-time {
+            background: linear-gradient(45deg, #ff5722, #d84315);
+            color: #fff;
+        }
+
+        .achievements {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            z-index: 1000;
+        }
+
+        .achievement {
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+            border: 4px solid #000;
+            border-radius: 15px;
             padding: 15px;
-            font-size: 1.2rem;
-            border: 3px solid #ddd;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            transition: all 0.3s ease;
-        }
-
-        .word-input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        button {
-            padding: 12px 24px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            margin: 10px 0;
+            color: #000;
             font-weight: bold;
-            min-width: 120px;
+            animation: achievementSlide 0.5s ease, achievementGlow 2s infinite;
         }
 
-        .submit-btn {
-            background: linear-gradient(145deg, #27ae60, #2ecc71);
-            color: white;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3);
-        }
-
-        .clear-btn {
-            background: linear-gradient(145deg, #e74c3c, #c0392b);
-            color: white;
-        }
-
-        .clear-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(231, 76, 60, 0.3);
-        }
-
-        .new-game-btn {
-            background: linear-gradient(145deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .new-game-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
-        }
-
-        .found-words {
-            margin-top: 30px;
-            text-align: left;
-        }
-
-        .found-words h3 {
-            color: #333;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .words-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .found-word {
-            background: linear-gradient(145deg, #2ecc71, #27ae60);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            animation: slideIn 0.5s ease;
-        }
-
-        @keyframes slideIn {
+        @keyframes achievementSlide {
             from {
                 opacity: 0;
-                transform: translateY(-10px);
+                transform: translateX(100%);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
 
-        .message {
-            padding: 15px;
-            border-radius: 12px;
-            margin: 15px 0;
-            font-weight: bold;
-            transition: all 0.3s ease;
+        @keyframes achievementGlow {
+            0%, 100% { box-shadow: 0 0 20px #ffd700; }
+            50% { box-shadow: 0 0 40px #ffb347; }
         }
 
-        .success {
-            background: rgba(46, 204, 113, 0.1);
-            border: 2px solid #2ecc71;
-            color: #27ae60;
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #ff0000, #ffff00);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFloat 3s infinite ease-out;
         }
 
-        .error {
-            background: rgba(231, 76, 60, 0.1);
-            border: 2px solid #e74c3c;
-            color: #c0392b;
+        @keyframes particleFloat {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-200px) scale(0);
+            }
         }
 
-        .info {
-            background: rgba(102, 126, 234, 0.1);
-            border: 2px solid #667eea;
-            color: #5a67d8;
-        }
-
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
             .game-container {
+                margin: 10px;
                 padding: 20px;
             }
             
-            h1 {
-                font-size: 2rem;
-            }
-            
             .letter {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
             }
             
-            .buttons {
+            .mega-buttons {
                 flex-direction: column;
                 align-items: center;
             }
             
-            button {
-                min-width: 200px;
+            .mega-button {
+                min-width: 250px;
+            }
+            
+            .achievements {
+                position: relative;
+                width: 100%;
+                top: 0;
+                right: 0;
             }
         }
     </style>
 </head>
 <body>
     <div class="game-container">
-        <h1>🎯 Kelime Avcısı</h1>
-        <p class="subtitle">Verilen harflerle kelimeler oluşturun!</p>
+        <h1>🔥💀 SÜPER MEGA KELIME AVCISI 3000 DELUXE 💀🔥</h1>
+        <p class="subtitle">⚡ ULTIMATE EXTREME WORD HUNTER CHAMPIONSHIP ⚡</p>
         
-        <div class="stats">
+        <div class="difficulty-selector">
+            <label for="difficulty">💪 ZORLUK SEVİYESİ:</label>
+            <select id="difficulty" onchange="changeDifficulty()">
+                <option value="easy">🐣 ÇOCUK OYUNCAĞI</option>
+                <option value="medium" selected>🔥 ORTA DÜZEY SAVAŞÇI</option>
+                <option value="hard">💀 ÖLÜM MODU</option>
+                <option value="nightmare">👹 KABUS REJİMİ</option>
+            </select>
+        </div>
+
+        <div class="mega-stats">
             <div class="stat">
                 <span class="stat-value" id="score">0</span>
-                <span class="stat-label">Puan</span>
+                <span class="stat-label">💰 PUAN</span>
             </div>
             <div class="stat">
                 <span class="stat-value" id="found-count">0</span>
-                <span class="stat-label">Kelime</span>
+                <span class="stat-label">🎯 KELİME</span>
             </div>
             <div class="stat">
                 <span class="stat-value" id="time">0</span>
-                <span class="stat-label">Saniye</span>
+                <span class="stat-label">⏰ SANİYE</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value" id="combo">0</span>
+                <span class="stat-label">🔥 COMBO</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value" id="level">1</span>
+                <span class="stat-label">⭐ LEVEL</span>
             </div>
         </div>
 
-        <div class="letters-container" id="letters-container">
-            <!-- Harfler buraya gelecek -->
+        <div class="combo-display" id="combo-display" style="display: none;">
+            🔥 COMBO X<span id="combo-multiplier">1</span> 🔥
         </div>
 
-        <input type="text" class="word-input" id="word-input" placeholder="Kelimeyi buraya yazın..." maxlength="15">
+        <div class="power-ups">
+            <div class="power-up freeze-time" onclick="usePowerUp('freeze')" title="Zamanı Dondur">⏸️</div>
+            <div class="power-up double-points" onclick="usePowerUp('double')" title="Çift Puan">2️⃣</div>
+            <div class="power-up extra-time" onclick="usePowerUp('time')" title="Extra Zaman">⏳</div>
+        </div>
+
+        <div class="letters-container">
+            <div class="letters-grid" id="letters-container">
+                <!-- Harfler buraya gelecek -->
+            </div>
+        </div>
+
+        <input type="text" class="word-input" id="word-input" 
+               placeholder="🎯 KELİMEYİ BURAYA YAZ VE DÜNYAYI FETHEt! 🎯" maxlength="20">
         
-        <div class="buttons">
-            <button class="submit-btn" onclick="submitWord()">✓ Gönder</button>
-            <button class="clear-btn" onclick="clearInput()">✗ Temizle</button>
-            <button class="new-game-btn" onclick="startNewGame()">🎮 Yeni Oyun</button>
+        <div class="mega-buttons">
+            <button class="mega-button submit-btn" onclick="submitWord()">✅ GÖNDER VE ZAFER KAZAN!</button>
+            <button class="mega-button clear-btn" onclick="clearInput()">❌ TEMİZLE VE YENİDEN!</button>
+            <button class="mega-button hint-btn" onclick="getHint()">💡 İPUCU AL!</button>
+            <button class="mega-button shuffle-btn" onclick="shuffleLetters()">🔄 HARFLERİ KARIŞTIR!</button>
+            <button class="mega-button new-game-btn" onclick="startNewGame()">🎮 YENİ SAVAŞ BAŞLAT!</button>
         </div>
 
         <div id="message"></div>
 
         <div class="found-words">
-            <h3>Bulunan Kelimeler (<span id="word-count">0</span>)</h3>
-            <div class="words-list" id="found-words-list"></div>
+            <h3>🏆 FETHETTIĞIN KELİMELER (<span id="word-count">0</span>) 🏆</h3>
+            <div class="words-grid" id="found-words-list"></div>
         </div>
     </div>
 
+    <div class="achievements" id="achievements"></div>
+
     <script>
-        // Oyun verileri
+        // Gelişmiş oyun verileri
         let gameData = {
             letters: [],
             foundWords: new Set(),
             score: 0,
+            combo: 0,
+            level: 1,
+            difficulty: 'medium',
             startTime: Date.now(),
-            timer: null
+            timer: null,
+            powerUps: {
+                freeze: 3,
+                double: 2,
+                extraTime: 2
+            },
+            achievements: new Set(),
+            lastWordTime: 0,
+            totalWords: 0,
+            perfectWords: 0,
+            doublePointsActive: false,
+            timeFreezed: false
         };
 
-        // Türkçe kelime listesi (örnek kelimeler)
-        const turkishWords = [
-            'KALEM', 'MASA', 'KAPI', 'KEDI', 'KÖPEK', 'ARABA', 'UÇAK', 'GEMİ', 'EV', 'OKUL',
-            'KİTAP', 'ÇANTA', 'AYAK', 'BALIK', 'KUTU', 'YEMEK', 'SU', 'HAVA', 'GÜNEŞ', 'AY',
-            'YILDIZ', 'AĞAÇ', 'ÇİÇEK', 'BAHÇE', 'SOKAK', 'ŞEHIR', 'KÖPRÜ', 'DENIZ', 'DAĞ', 'ORMAN',
-            'KAR', 'YAĞMUR', 'RÜZGAR', 'BULUT', 'GÖL', 'IRMAK', 'TAŞ', 'KUM', 'PLAJ', 'PARK',
-            'MEYVE', 'ELMA', 'ARMUT', 'ÇİLEK', 'ÜZÜM', 'PORTAKAL', 'MANZA', 'PEYNIR', 'EKMEK', 'SÜET',
-            'ÇORBA', 'SALATa', 'PİLAV', 'MAKARNA', 'ET', 'TAVUK', 'SEBZE', 'PATATES', 'SOĞAN', 'DOMATES',
-            'KIRMIZI', 'MAVI', 'SARI', 'YEŞİL', 'SIYAH', 'BEYAZ', 'PEMBE', 'MOR', 'TURUNCU', 'KAHVE',
-            'BÜYÜK', 'KÜÇÜK', 'UZUN', 'KISA', 'GENİŞ', 'DAR', 'YÜKSEK', 'ALÇAK', 'HIZLI', 'YAVAS',
-            'SERIN', 'SICAK', 'SOĞUK', 'TAZE', 'ESKİ', 'YENİ', 'TEMİZ', 'KİRLİ', 'ACIK', 'KAPALI'
-        ];
-
-        // Türkçe harfler ve frekansları
-        const turkishLetters = 'AEIİOÖUÜBCÇDFGĞHJKLMNPRSŞTVYZ';
-        const letterFrequency = {
-            'A': 12, 'E': 9, 'I': 8, 'İ': 8, 'O': 3, 'Ö': 1, 'U': 3, 'Ü': 2,
-            'B': 3, 'C': 1, 'Ç': 1, 'D': 5, 'F': 1, 'G': 2, 'Ğ': 1, 'H': 1,
-            'J': 1, 'K': 5, 'L': 6, 'M': 4, 'N': 7, 'P': 1, 'R': 7, 'S': 3,
-            'Ş': 2, 'T': 3, 'V': 1, 'Y': 3, 'Z': 1
-        };
-
-        function generateRandomLetters() {
-            const letters = [];
-            const vowels = 'AEIİOÖUÜ';
-            const consonants = 'BCÇDFGĞHJKLMNPRSŞTVYZ';
-            
-            // En az 3 sesli harf ekle
-            for (let i = 0; i < 3; i++) {
-                letters.push(vowels[Math.floor(Math.random() * vowels.length)]);
-            }
-            
-            // Geri kalan 5 harfi rastgele ekle
-            for (let i = 0; i < 5; i++) {
-                const allLetters = vowels + consonants;
-                letters.push(allLetters[Math.floor(Math.random() * allLetters.length)]);
-            }
-            
-            // Harfleri karıştır
-            return letters.sort(() => Math.random() - 0.5);
-        }
-
-        function displayLetters() {
-            const container = document.getElementById('letters-container');
-            container.innerHTML = '';
-            
-            gameData.letters.forEach((letter, index) => {
-                const letterDiv = document.createElement('div');
-                letterDiv.className = 'letter';
-                letterDiv.textContent = letter;
-                letterDiv.setAttribute('data-index', index);
-                letterDiv.onclick = () => addLetterToWord(letter, index);
-                container.appendChild(letterDiv);
-            });
-        }
-
-        function addLetterToWord(letter, index) {
-            const input = document.getElementById('word-input');
-            const letterElements = document.querySelectorAll('.letter');
-            
-            if (letterElements[index].classList.contains('used')) return;
-            
-            input.value += letter;
-            letterElements[index].classList.add('used');
-        }
-
-        function clearInput() {
-            document.getElementById('word-input').value = '';
-            document.querySelectorAll('.letter').forEach(letter => {
-                letter.classList.remove('used');
-            });
-            showMessage('Kelime temizlendi!', 'info');
-        }
-
-        function submitWord() {
-            const word = document.getElementById('word-input').value.toUpperCase().trim();
-            
-            if (!word) {
-                showMessage('Lütfen bir kelime yazın!', 'error');
-                return;
-            }
-
-            if (word.length < 3) {
-                showMessage('Kelime en az 3 harf olmalı!', 'error');
-                return;
-            }
-
-            if (gameData.foundWords.has(word)) {
-                showMessage('Bu kelimeyi zaten buldunuz!', 'error');
-                return;
-            }
-
-            if (!canFormWord(word)) {
-                showMessage('Bu kelimeyi verilen harflerle oluşturamazsınız!', 'error');
-                return;
-            }
-
-            if (isValidTurkishWord(word)) {
-                gameData.foundWords.add(word);
-                const points = calculatePoints(word);
-                gameData.score += points;
-                
-                addFoundWord(word, points);
-                updateStats();
-                clearInput();
-                showMessage(`Harika! "${word}" kelimesi ${points} puan kazandırdı!`, 'success');
-            } else {
-                showMessage('Geçersiz kelime! Lütfen Türkçe bir kelime yazın.', 'error');
-            }
-        }
-
-        function canFormWord(word) {
-            const availableLetters = [...gameData.letters];
-            
-            for (let letter of word) {
-                const index = availableLetters.indexOf(letter);
-                if (index === -1) return false;
-                availableLetters.splice(index, 1);
-            }
-            
-            return true;
-        }
-
-        function isValidTurkishWord(word) {
-            // Basit kelime kontrolü - gerçek uygulamada bir kelime veritabanı kullanılmalı
-            return turkishWords.includes(word) || word.length >= 3;
-        }
-
-        function calculatePoints(word) {
-            let points = 0;
-            for (let letter of word) {
-                // Nadir harfler daha fazla puan verir
-                if ('ÇĞÖÜŞ'.includes(letter)) points += 3;
-                else if ('JVZ'.includes(letter)) points += 4;
-                else if ('BCDFGHKLMNPRSTVY'.includes(letter)) points += 2;
-                else points += 1; // Sesli harfler
-            }
-            return points + word.length; // Uzun kelimeler bonus puan alır
-        }
-
-        function addFoundWord(word, points) {
-            const wordsList = document.getElementById('found-words-list');
-            const wordDiv = document.createElement('div');
-            wordDiv.className = 'found-word';
-            wordDiv.textContent = `${word} (${points}p)`;
-            wordsList.appendChild(wordDiv);
-        }
-
-        function updateStats() {
-            document.getElementById('score').textContent = gameData.score;
-            document.getElementById('found-count').textContent = gameData.foundWords.size;
-            document.getElementById('word-count').textContent = gameData.foundWords.size;
-        }
-
-        function updateTimer() {
-            const elapsed = Math.floor((Date.now() - gameData.startTime) / 1000);
-            document.getElementById('time').textContent = elapsed;
-        }
-
-        function startNewGame() {
-            // Oyun verilerini sıfırla
-            gameData = {
-                letters: generateRandomLetters(),
-                foundWords: new Set(),
-                score: 0,
-                startTime: Date.now(),
-                timer: null
-            };
-
-            // Arayüzü güncelle
-            displayLetters();
-            clearInput();
-            document.getElementById('found-words-list').innerHTML = '';
-            updateStats();
-            
-            // Timer'ı başlat
-            if (gameData.timer) clearInterval(gameData.timer);
-            gameData.timer = setInterval(updateTimer, 1000);
-            
-            showMessage('Yeni oyun başladı! İyi şanslar!', 'success');
-        }
-
-        function showMessage(text, type) {
-            const messageDiv = document.getElementById('message');
-            messageDiv.textContent = text;
-            messageDiv.className = `message ${type}`;
-            
-            setTimeout(() => {
-                messageDiv.textContent = '';
-                messageDiv.className = '';
-            }, 3000);
-        }
-
-        // Enter tuşu ile kelime gönderme
-        document.getElementById('word-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                submitWord();
-            }
-        });
-
-        // Oyunu başlat
-        startNewGame();
-    </script>
-</body>
-</html>
+        // Gelişmiş Türkçe kelime veritabanı - kategorilere ayrılmış
+        const turkishWords = {
+            easy: [
+                'AT', 'EV', 'SU', 'EL', 'YOL', 'GÖZ', 'SES', 'TAŞ', 'KAR', 'YAĞ',
+                'KEDI', 'KÖPEK', 'MASA', 'KAPI', 'KITAP', 'KALEM', 'ÇANTA', 'AYAK', 'BALIK', 'KUTU',
+                'YEMEK', '
